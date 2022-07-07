@@ -16,7 +16,7 @@ def rot(A, angle):
                    [sin(angle), cos(angle), 0],
                    [0, 0, 1]])
 
-  return rotX @ rotY @  A
+  return rotX @ rotY @ A
 
 
 def proj(A):

@@ -1,3 +1,4 @@
+#!/opt/anaconda3/envs/game/bin/python3
 import parse
 import numpy as np
 import pygame
@@ -6,15 +7,24 @@ from matrices import proj, rot
 def drawCube(cube, angle):
 
   for i in range(4):
-    pygame.draw.line(screen, WHITE, proj(rot(cube[i], angle)), proj(rot(cube[(i + 1) % 4], angle)))
-    pygame.draw.line(screen, WHITE, proj(rot(cube[i + 4], angle)), proj(rot(cube[((i + 1) % 4) + 4], angle)))
-    pygame.draw.line(screen, WHITE, proj(rot(cube[i], angle)), proj(rot(cube[i + 4], angle)))
+    pygame.draw.line(screen, WHITE, proj(rot(cube[i], angle)) + (SCREEN_WIDTH / 2), 
+                                    proj(rot(cube[(i + 1) % 4] + (SCREEN_WIDTH / 2), angle)))
+
+
+    pygame.draw.line(screen, WHITE, proj(rot(cube[i + 4], angle)) + (SCREEN_WIDTH / 2),
+                                    proj(rot(cube[((i + 1) % 4) + 4] + (SCREEN_WIDTH / 2), angle)))
+
+
+    pygame.draw.line(screen, WHITE, proj(rot(cube[i], angle)) + (SCREEN_WIDTH / 2), 
+                                    proj(rot(cube[i + 4] + (SCREEN_WIDTH / 2), angle)))
 
 
 pygame.init()
 pygame.display.set_caption('py3D')
 
-SIZE = (900, 600)
+SCREEN_WIDTH = 900
+SCREEN_HEIGHT = 600
+SIZE = (SCREEN_WIDTH, SCREEN_HEIGHT)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
