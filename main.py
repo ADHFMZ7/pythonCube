@@ -3,6 +3,7 @@ import parse
 import numpy as np
 import pygame
 from matrices import proj, rot
+import sys
 
 def drawCube(cube, angle):
 
