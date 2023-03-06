@@ -7,8 +7,8 @@ import sys
 import time
 from math import cos, sin
 
-SCREEN_WIDTH = 1920 
-SCREEN_HEIGHT = 1080 
+SCREEN_WIDTH = 900
+SCREEN_HEIGHT = 900 
 SIZE = (SCREEN_WIDTH, SCREEN_HEIGHT)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
