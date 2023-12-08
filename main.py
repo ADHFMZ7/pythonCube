@@ -20,15 +20,15 @@ def drawCube(cube, angle):
 
   for i in range(4):
     pygame.draw.line(screen, WHITE, proj(rot(cube[i], angle)), 
-                                    proj(rot(cube[(i + 1) % 4], angle)))
+                                    proj(rot(cube[(i + 1) % 4], angle)), width=2)
 
 
     pygame.draw.line(screen, WHITE, proj(rot(cube[i + 4], angle)),
-                                    proj(rot(cube[((i + 1) % 4) + 4], angle)))
+                                    proj(rot(cube[((i + 1) % 4) + 4], angle)), width=2)
 
 
     pygame.draw.line(screen, WHITE, proj(rot(cube[i], angle)), 
-                                    proj(rot(cube[i + 4], angle)))
+                                    proj(rot(cube[i + 4], angle)), width=2)
 
 
 def rot(A, angle):
